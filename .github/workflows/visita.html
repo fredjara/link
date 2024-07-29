@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mandato Colliers</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="img/logo.png" type="image/x-icon">
+</head>
+
+<body>
+    <header>
+        <img src="img/pngcolliers.png" alt="pngColliers">
+        <div class="lineaamarilla"></div>
+        <div class="lineaceleste"></div>
+        
+        <div class="linearojo"></div>
+    </header>
+    <section class="formulario">
+        
+        <div class="FormPropiedades">
+            <h1 class="titulo">Identificación Propiedad</h1>
+            <div class="FormPropiedadesCampos">
+                
+                
+                <div class="form-group">
+                    <input type="text" id="inputTipo" readonly>
+                    <label for="inputTipo">Tipo</label>
+                </div>
+                <div class="form-group">
+                    <input type="text" id="inputDirección" readonly>
+                    <label for="inputDirección">Dirección</label>
+                </div>
+                
+                <div class="form-group">
+                    <input type="text" id="inputPrecio" readonly>
+                    <label for="inputPrecio">Precio</label>
+                </div>
+                <div class="form-group">
+                    <input type="text" id="inputRol" readonly>
+                    <label for="inputRol">Rol</label>
+                </div>
+                <div class="form-group">
+                    <input type="text" id="inputTipoPropiedad" readonly>
+                    <label for="inputTipoPropiedad">Venta / Arriendo</label>
+                </div>
+            </div>
+
+        </div>
+      
+        </div>
+        
+        <br>
+        <p></p>
+        
+        <br>
+        <div id="canvas-wrapper">
+            <p>Firmar a continuación:</p>
+            <canvas id="canvas"></canvas>
+            <br>
+            <button  id="btnLimpiar" >Limpiar Firma</button>
+            <button style="display: none;" id="btnDescargar">Descargar</button>
+            <button style="display: none;" id="btnGenerarDocumento">Pasar a documento</button>
+            <br>
+        </div>
+        <br>
+        <div class="botones">
+            <button id="submitBtn">Firmar Visita</button>
+        </div>
+    </section>
+    
+   
+    <script src="entradaJS.js"></script>
+    <script src="enviarDatosVisita.js"></script>
+
+    <script src=""></script>
+    <footer>
+        <div>
+            <p>2024</p>
+        </div>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mandato Colliers</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="img/logo.png" type="image/x-icon">
+</head>
+
+<body>
+    <header>
+        <img src="img/pngcolliers.png" alt="pngColliers">
+        <div class="lineaamarilla"></div>
+        <div class="lineaceleste"></div>
+        
+        <div class="linearojo"></div>
+    </header>
+    <section class="formulario">
+        <div class="FormPropiedades">
+            <p>Los campos que poseen un asterisco (*) son de caracter obligatorios.</p>
+        </div>
+        <br>
+        <div class="FormPropiedades">
+            <div class="FormCampoPrincipal">
+                <div class="form-group">
+                    <input type="text" id="inputOportunidad" readonly >
+                    <label for="inputOportunidad">Número de Negocio</label>
+                </div>
+            </div>
+        </div>
+        <div class="FormPropiedades">
+            <h1 class="titulo">Identificación Propiedad</h1>
+            <div class="FormPropiedadesCampos">
+                
+                
+                <div class="form-group">
+                    <input type="text" id="inputDireccion" readonly>
+                    <label for="inputDireccion">Dirección</label>
+                </div>
+                <div class="form-group">
+                    <input type="text" id="inputComuna" readonly>
+                    <label for="inputComuna">Comuna</label>
+                </div>
+                
+                <div class="form-group">
+                    <input type="text" id="inputRegion" readonly>
+                    <label for="inputRegion">Región</label>
+                </div>
+                <div class="form-group">
+                    <input type="text" id="inputRol" readonly>
+                    <label for="inputRol">Rol</label>
+                </div>
+                <div class="form-group">
+                    <input type="text" id="inputTipoPropiedad" readonly>
+                    <label for="inputTipoPropiedad">Tipo de Propiedad</label>
+                </div>
+            </div>
+
+        </div>
+        <div class="FormPropiedades">
+            
+            <h1 class="titulo">Identificación Propietario</h1>
+
+            <div class="FormPropiedadesCampos">
+                
+                
+                <div class="form-group">
+                    <input type="text" id="inputRazonS">
+                    <label for="inputRazonS">Razón Social</label>
+                </div>
+                <div class="form-group">
+                    <input type="text" id="inputRut">
+                    <label for="inputRut">Rut Sociedad</label>
+                </div>
+                
+                <div class="form-group">
+                    <input type="text" id="inputNombre" oninput="validateForm()">
+                    <label for="inputNombre">Nombre Representante *</label>
+                </div>
+                <div class="form-group">
+                    <input type="text" id="inputRutRepresentante" oninput="validateForm()">
+                    <label for="inputRutRepresentante">Rut Representante *</label>
+                </div>
+                <div class="form-group">
+                    <input type="text" id="inputCorreo" oninput="validateForm()">
+                    <label for="inputCorreo">Correo Electronico *</label>
+                </div>
+            </div>
+
+        </div>
+        <div class="FormPropiedades">
+            <h1 class="titulo">Mandato</h1>
+            <div class="FormPropiedadesCampos">
+                
+                
+                <div class="form-group">
+                    <input type="text" id="inputValorMandatoA" >
+                    <label for="inputValorMandatoA">Valor Mandato Arriendo</label>
+                </div>
+
+                <div class="form-group">
+                    <input type="text" id="inputValorMandatoV" >
+                    <label for="inputValorMandatoV">Valor Mandato Venta</label>
+                </div>
+                <br>
+                <div class="text" style="display: flex; align-items: center; gap: 15px;">
+                    <input style="height: 20px;" type="checkbox" id="input12" readonly>
+                    <label style="font-size: 1rem;" for="input3">Autorizo instalacion letrero</label>
+                </div>
+                
+               
+            </div>
+
+        </div>
+        <br>
+        <div id="canvas-wrapper">
+            <p>Firmar a continuación:</p>
+            <canvas id="canvas"></canvas>
+            <br>
+            <button  id="btnLimpiar" >Limpiar Firma</button>
+            <button style="display: none;" id="btnDescargar">Descargar</button>
+            <button style="display: none;" id="btnGenerarDocumento">Pasar a documento</button>
+            <br>
+        </div>
+        
+        <div class="botones">
+            <button id="submitBtn" >Firmar Mandato</button>
+        </div>
+        
+        
+       
+    </section>
+    
+
+    
+   
+    
+
+    <script src="ObtenerDatos.js"></script>
+    <script src="EnviarMandatoFirmado.js"></script>
+    <script src="entradaJS.js"></script>
+    <script src="ValidacionObligatoria.js"></script>
+    
+    <footer>
+        <div>
+            <p>2024</p>
+        </div>
+    </footer>
+</body>
+</html>
