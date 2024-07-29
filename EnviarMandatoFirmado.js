@@ -5,6 +5,14 @@ let boton = document.getElementById("submitBtn");
 
     
 function enviarMandato() {
+
+    let TextoinputNombre = document.getElementById("inputNombre");
+    let TextoinputRutRepresentante = document.getElementById("inputRutRepresentante");
+    let TextoinputCorreo = document.getElementById("inputCorreo");
+    if (TextoinputNombre.value.trim() === '' || TextoinputRutRepresentante.value.trim() === '' || TextoinputCorreo.value.trim() === '' ) {
+        alert("Faltan Campos obligatorios, recuerde llenar los campos que contienen (*)");
+        return;
+    }
     
     let inputOportunidad = document.getElementById('inputOportunidad').value;
     let valorMandatoA = document.getElementById('inputValorMandatoA').value;
