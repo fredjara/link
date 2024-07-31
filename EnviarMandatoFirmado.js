@@ -47,6 +47,8 @@ function enviarMandato() {
     };
     console.log(jsonvariable);
 
+    
+
     function encodeTwoStringsToBase64(inputOportunidad1, rut2) {
 
         let encodedString1 = btoa(inputOportunidad1);
@@ -90,8 +92,7 @@ function enviarMandato() {
     })
     .then(response => response.json())
     .then(data => {
-        console.log('Success:', data);
-       
+        console.error('Error:', data);
     })
     .catch((error) => {
         console.error('Error:', error);

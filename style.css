@@ -44,6 +44,16 @@ header img{
     height: 3px;
     background-color: rgb(255, 0, 0);
 }
+
+.modalEnviado{
+    position: absolute;
+    width: 100%;
+    height: 200%;
+    background-color: rgba(0, 0, 0, 0.671);
+    display: none;
+    z-index: 3;
+}
+
 .formulario{
     margin-top: 5vh;
     padding-top: 1rem;
