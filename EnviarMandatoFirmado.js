@@ -29,7 +29,7 @@ function enviarMandato() {
     let valorPropiedad = document.getElementById('inputTipoPropiedad').value;  
     let imagenFirma = $canvas.toDataURL();
     let imagenEnviada = imagenFirma.substring(22, 10000);
-    let letrero = "si";
+    let letrero = "Si";
 
     let jsonvariable = {
         inputOportunidad: inputOportunidad,
