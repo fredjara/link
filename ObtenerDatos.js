@@ -137,12 +137,11 @@ document.addEventListener('DOMContentLoaded', (event) => {
             
             valorarriendocampo.style.display = 'none';
             textoA.style.display = 'none';
-        }else{
-            if(data.tipoOportunidad = 282270001){
-                valorventacampo.style.display = 'none';
-                TextoV.style.display = 'none';
-            }
-            
+        }
+
+        if(data.tipoOportunidad = 282270001){
+            valorventacampo.style.display = 'none';
+            TextoV.style.display = 'none';
         }
     })
     .catch((error) => {
