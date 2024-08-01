@@ -133,16 +133,22 @@ document.addEventListener('DOMContentLoaded', (event) => {
         var textoA = document.getElementById('textoA');
         var TextoV = document.getElementById('textoV');
 
-        if(data.tipoOportunidad = 282270000){
+        if(data.tipoOportunidad == 282270000){
             
             valorarriendocampo.style.display = 'none';
             textoA.style.display = 'none';
+            console.log("VENTA");
+        }else{
+            if(data.tipoOportunidad == 282270001){
+                valorventacampo.style.display = 'none';
+                TextoV.style.display = 'none';
+                console.log("ARRIENDO");
+            }else{
+                console.log("VENTA Y ARRIENDO");
+            }
         }
 
-        if(data.tipoOportunidad = 282270001){
-            valorventacampo.style.display = 'none';
-            TextoV.style.display = 'none';
-        }
+        
     })
     .catch((error) => {
         console.error('Error:', error);
