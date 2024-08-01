@@ -24,8 +24,8 @@ document.addEventListener('DOMContentLoaded', (event) => {
     .then(data => {
         console.log('Success:', data);
         document.getElementById('inputOportunidad').value = data.idOportunidad;
-        document.getElementById('inputValorMandatoA').value = data.valorA;
-        document.getElementById('inputValorMandatoV').value = data.valorV;
+        document.getElementById('inputValorMandatoA').value = data.ValorA;
+        document.getElementById('inputValorMandatoV').value = data.ValorV;
         document.getElementById('inputDireccion').value = data.Direccion;
         document.getElementById('inputComuna').value = data.Comuna;
         document.getElementById('inputRegion').value = data.Region;
