@@ -128,6 +128,22 @@ document.addEventListener('DOMContentLoaded', (event) => {
         console.log(ValorTipoPropiedad);
 
         document.getElementById('inputTipoPropiedad').value = ValorTipoPropiedad;
+        var valorarriendocampo = document.getElementById('inputValorMandatoA');
+        var valorventacampo = document.getElementById('inputValorMandatoV');
+        var textoA = document.getElementById('textoA');
+        var TextoV = document.getElementById('textoV');
+
+        if(data.tipoOportunidad = 282270000){
+            
+            valorarriendocampo.style.display = 'none';
+            textoA.style.display = 'none';
+        }else{
+            if(data.tipoOportunidad = 282270001){
+                valorventacampo.style.display = 'none';
+                TextoV.style.display = 'none';
+            }
+            
+        }
     })
     .catch((error) => {
         console.error('Error:', error);
