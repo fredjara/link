@@ -13,7 +13,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
 
     
     //Realizar post con la id a power automate
-    fetch('https://prod2-21.brazilsouth.logic.azure.com:443/workflows/fe566f66ab6d4972b77973c15614f640/triggers/manual/paths/invoke?api-version=2016-06-01&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig=EEGSpe-K-npO5xUDkc5ZOXOHFc9Wp_dy7aP71HXymaE', {
+    fetch('https://prod2-13.brazilsouth.logic.azure.com:443/workflows/00bf95abaa164c049919e6bc9f631cf4/triggers/manual/paths/invoke?api-version=2016-06-01&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig=H-Vlgqj5abrEZmynfAj7RqwP8cWA_8GCsl_MiFZU8MY', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'
@@ -23,13 +23,24 @@ document.addEventListener('DOMContentLoaded', (event) => {
     .then(response => response.json())
     .then(data => {
         console.log('Success:', data);
-        document.getElementById('inputOportunidad').value = data.idOportunidad;
-        document.getElementById('inputValorMandatoA').value = data.valorA;
-        document.getElementById('inputValorMandatoV').value = data.valorV;
-        document.getElementById('inputDireccion').value = data.Direccion;
-        document.getElementById('inputComuna').value = data.Comuna;
-        document.getElementById('inputRegion').value = data.Region;
-        document.getElementById('inputRol').value = data.Rol;
+        
+        document.getElementById('inputPrecioA').value = data.valorArriendo;
+        document.getElementById('inputPrecioV').value = data.valorVenta;
+        document.getElementById('inputDirección').value = data.Direccion;
+        document.getElementById('inputSuperficie').value = data.SuperficieConstruida;
+        let tipoOportunidad = data.tipoOportunidad;
+        switch (tipoOportunidad){
+            case "100000000":
+                tipoOportunidad = "Venta y Arriendo";
+            break;
+            case "282270000":
+                tipoOportunidad = "Venta";
+            break;
+            case "282270001":
+                tipoOportunidad = "Arriendo";
+            break;
+        }
+        document.getElementById('inputTipoOportunidad').value = tipoOportunidad;
         let ValorTipoPropiedad = data.tipoPropiedad;
         console.log(ValorTipoPropiedad);
         switch (ValorTipoPropiedad){
@@ -123,11 +134,12 @@ document.addEventListener('DOMContentLoaded', (event) => {
             case "100000024":
             ValorTipoPropiedad = "Terreno Otro";
             break;
-
+     
         }    
         console.log(ValorTipoPropiedad);
 
-        document.getElementById('inputTipoPropiedad').value = ValorTipoPropiedad;
+        document.getElementById('inputTipo').value = ValorTipoPropiedad;
+        
     })
     .catch((error) => {
         console.error('Error:', error);

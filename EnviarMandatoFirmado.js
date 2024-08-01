@@ -5,7 +5,7 @@ let boton = document.getElementById("submitBtn");
 
     
 function enviarMandato() {
-
+    alert("Mandato Enviado Correctamente")
     let TextoinputNombre = document.getElementById("inputNombre");
     let TextoinputRutRepresentante = document.getElementById("inputRutRepresentante");
     let TextoinputCorreo = document.getElementById("inputCorreo");
