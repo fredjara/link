@@ -5,15 +5,30 @@ let boton = document.getElementById("submitBtn");
 
     
 function enviarMandato() {
-    alert("Mandato Enviado Correctamente")
+    const urlParams = new URLSearchParams(window.location.search);
+
+    for (let url of urlParams)
+    {console.log(url)}
+
+    const identificador = urlParams.get('id');
     let TextoinputNombre = document.getElementById("inputNombre");
     let TextoinputRutRepresentante = document.getElementById("inputRutRepresentante");
     let TextoinputCorreo = document.getElementById("inputCorreo");
-    if (TextoinputNombre.value.trim() === '' || TextoinputRutRepresentante.value.trim() === '' || TextoinputCorreo.value.trim() === '' ) {
+
+    const radioButtons = document.querySelectorAll('input[name="options"]');
+    let isChecked = false;
+
+    
+    radioButtons.forEach(radio => {
+        if (radio.checked) {
+            isChecked = true;
+        }
+    });
+    if (TextoinputNombre.value.trim() === '' || TextoinputRutRepresentante.value.trim() === '' || TextoinputCorreo.value.trim() === '') {
         alert("Faltan Campos obligatorios, recuerde llenar los campos que contienen (*)");
         return;
     }
-    
+    window.location.href = 'FirmaFinalizada.html';
     let inputOportunidad = document.getElementById('inputOportunidad').value;
     let valorMandatoA = document.getElementById('inputValorMandatoA').value;
     let valorMandatoV = document.getElementById('inputValorMandatoV').value;
@@ -85,6 +100,7 @@ function enviarMandato() {
             nombre:nombre,
             razonSocial:razonSocial,
             letrero:letrero,
+            identificador:identificador
     
             
          })

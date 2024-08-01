@@ -18,13 +18,23 @@ document.addEventListener('DOMContentLoaded', (event) => {
 
 
 function validateForm() {
+    const radioButtons = document.querySelectorAll('input[name="options"]');
+    let isChecked = false;
+
+    
+    radioButtons.forEach(radio => {
+        if (radio.checked) {
+            isChecked = true;
+        }
+    });
+
     let TextoinputNombre = document.getElementById("inputNombre");
     let TextoinputRutRepresentante = document.getElementById("inputRutRepresentante");
     let TextoinputCorreo = document.getElementById("inputCorreo");
     const botonenvio = document.getElementById("submitBtn");
 
     // Verificar si todos los campos no están vacíos
-    if (TextoinputNombre.value.trim() === '' || TextoinputRutRepresentante.value.trim() === '' || TextoinputCorreo.value.trim() === '' ) {
+    if (TextoinputNombre.value.trim() === '' || TextoinputRutRepresentante.value.trim() === '' || TextoinputCorreo.value.trim() === '' || isChecked == false ) {
         botonenvio.disabled = true;
         botonenvio.style.backgroundColor = 'gray';
     } else {
