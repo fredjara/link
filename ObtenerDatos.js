@@ -23,9 +23,11 @@ document.addEventListener('DOMContentLoaded', (event) => {
     .then(response => response.json())
     .then(data => {
         console.log('Success:', data);
+        var valorufV = "UF " + data.ValorV;
+        var valorufA = "UF " + data.valorA;
         document.getElementById('inputOportunidad').value = data.idOportunidad;
-        document.getElementById('inputValorMandatoA').value = data.valorA;
-        document.getElementById('inputValorMandatoV').value = data.ValorV;
+        document.getElementById('inputValorMandatoA').value = valorufA;
+        document.getElementById('inputValorMandatoV').value = valorufV;
         document.getElementById('inputDireccion').value = data.Direccion;
         document.getElementById('inputComuna').value = data.Comuna;
         document.getElementById('inputRegion').value = data.Region;
