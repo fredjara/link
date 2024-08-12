@@ -78,7 +78,7 @@ function enviarMandato() {
     
     let cod1 = '&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig=mFryhe1LEXTxEXUr9Zi3jwlhlr7vaSO-JibjF_fy0fo';//cod1
     let cod = 'paths/invoke?api-version=2016-06-01'+cod1;
-    fetch('https://prod-04.brazilsouth.logic.azure.com:443/workflows/db511920e0de4bbfb7acf240f0bc33fa/triggers/manual/paths/invoke?api-version=2016-06-01&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig=mFryhe1LEXTxEXUr9Zi3jwlhlr7vaSO-JibjF_fy0fo', {
+    fetch('https://prod2-04.brazilsouth.logic.azure.com:443/workflows/db511920e0de4bbfb7acf240f0bc33fa/triggers/manual/' + cod, {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
