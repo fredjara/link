@@ -28,7 +28,7 @@ function enviarMandato() {
         alert("Faltan Campos obligatorios, recuerde llenar los campos que contienen (*)");
         return;
     }
-    window.location.href = 'FirmaFinalizada.html';
+    
     let inputOportunidad = document.getElementById('inputOportunidad').value;
     let valorMandatoA = document.getElementById('inputValorMandatoA').value;
     let valorMandatoV = document.getElementById('inputValorMandatoV').value;
@@ -75,9 +75,10 @@ function enviarMandato() {
     // Ejemplo de uso
 
     let encodedResult = encodeTwoStringsToBase64(inputOportunidad, rut);
+    
     let cod1 = '&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig=mFryhe1LEXTxEXUr9Zi3jwlhlr7vaSO-JibjF_fy0fo';//cod1
     let cod = 'paths/invoke?api-version=2016-06-01'+cod1;
-    fetch('https://prod2-04.brazilsouth.logic.azure.com:443/workflows/db511920e0de4bbfb7acf240f0bc33fa/triggers/manual/' + cod, {
+    fetch('https://prod-04.brazilsouth.logic.azure.com:443/workflows/db511920e0de4bbfb7acf240f0bc33fa/triggers/manual/paths/invoke?api-version=2016-06-01&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig=mFryhe1LEXTxEXUr9Zi3jwlhlr7vaSO-JibjF_fy0fo', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
@@ -113,6 +114,7 @@ function enviarMandato() {
     .catch((error) => {
         console.error('Error:', error);
     });
+    window.location.href = 'FirmaFinalizada.html';
     
 };
 
