@@ -2,7 +2,14 @@
 
 let boton = document.getElementById("submitBtn");
 
-
+function finalizarEnvio(){
+    
+    setTimeout(function() {
+        window.location.href = 'FirmaFinalizada.html';
+   
+    }, 1000);
+    
+}
     
 function enviarMandato() {
     
@@ -35,15 +42,19 @@ function enviarMandato() {
             imagenFirma: imagenFirma,
             imagenEnviada: imagenEnviada
         })
+
     })
     .then(response => response.json())
+    finalizarEnvio()
     .then(data => {
         console.log('Success:', data);
-        //window.location.href = 'FirmaFinalizada.html';
+        finalizarEnvio()
     })
     .catch((error) => {
         console.error('Error:', error);
     });
+    
+    finalizarEnvio()
 }
 
 boton.addEventListener('click', enviarMandato);
