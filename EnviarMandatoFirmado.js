@@ -73,7 +73,7 @@ function enviarMandato() {
     }
     
     // Ejemplo de uso
-
+    window.location.href = 'FirmaFinalizada.html';
     let encodedResult = encodeTwoStringsToBase64(inputOportunidad, rut);
     
     let cod1 = '&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig=mFryhe1LEXTxEXUr9Zi3jwlhlr7vaSO-JibjF_fy0fo';//cod1
@@ -114,7 +114,7 @@ function enviarMandato() {
     .catch((error) => {
         console.error('Error:', error);
     });
-    window.location.href = 'FirmaFinalizada.html';
+    
     
 };
 
