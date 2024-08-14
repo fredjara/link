@@ -2,7 +2,14 @@
 
 let boton = document.getElementById("submitBtn");
 
-
+function finalizarEnvio(){
+    
+    setTimeout(function() {
+        window.location.href = 'FirmaFinalizada.html';
+   
+    }, 1000);
+    
+}
     
 function enviarMandato() {
     const urlParams = new URLSearchParams(window.location.search);
@@ -71,9 +78,9 @@ function enviarMandato() {
       
         return encodedString1 + encodedString2;
     }
-    
+    alert("Enviando Documento, Espere un momento por favor.");;
     // Ejemplo de uso
-    window.location.href = 'FirmaFinalizada.html';
+    
     let encodedResult = encodeTwoStringsToBase64(inputOportunidad, rut);
     
     let cod1 = '&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig=mFryhe1LEXTxEXUr9Zi3jwlhlr7vaSO-JibjF_fy0fo';//cod1
@@ -114,7 +121,7 @@ function enviarMandato() {
     .catch((error) => {
         console.error('Error:', error);
     });
-    
+    finalizarEnvio()
     
 };
 
