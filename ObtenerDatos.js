@@ -150,6 +150,23 @@ document.addEventListener('DOMContentLoaded', (event) => {
             }
         }
 
+        var firmaA = document.getElementById('firmaarriendo');
+        var firmaV = document.getElementById('firmaventa');
+        if(data.tipoOportunidad == 282270000){
+            
+            firmaV.style.display = 'block';  
+            console.log("VENTA");
+        }else{
+            if(data.tipoOportunidad == 282270001){
+                firmaA.style.display = 'block';  
+                console.log("VENTA");
+            }else{
+                console.log("VENTA Y ARRIENDO");
+                firmaV.style.display = 'block';  
+                console.log("VENTA");
+            }
+        }
+
         
     })
     .catch((error) => {

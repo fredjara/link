@@ -40,7 +40,25 @@ document.addEventListener('DOMContentLoaded', (event) => {
                 tipoOportunidad = "Arriendo";
             break;
         }
+
+        
         document.getElementById('inputTipoOportunidad').value = tipoOportunidad;
+        var firmaA = document.getElementById('firmaarriendo');
+        var firmaV = document.getElementById('firmaventa');
+        if(data.tipoOportunidad == "282270000"){
+            
+            firmaV.style.display = 'block';  
+            
+        }else{
+            if(data.tipoOportunidad == "282270001"){
+                firmaA.style.display = 'block';  
+                
+            }else{
+                console.log("VENTA Y ARRIENDO");
+                firmaV.style.display = 'block';  
+                
+            }
+        }
         let ValorTipoPropiedad = data.tipoPropiedad;
         console.log(ValorTipoPropiedad);
         switch (ValorTipoPropiedad){
