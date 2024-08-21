@@ -12,6 +12,13 @@ function finalizarEnvio(){
 }
     
 function enviarMandato() {
+
+    const urlParams = new URLSearchParams(window.location.search);
+
+    for (let url of urlParams)
+    {console.log(url)}
+
+    const id = urlParams.get('id');
     
     let inputTipo = document.getElementById('inputTipo').value;
     let inputDireccion = document.getElementById('inputDirección').value;
@@ -19,10 +26,10 @@ function enviarMandato() {
     let inputPrecioA = document.getElementById('inputPrecioA').value;
     let inputSuperficie = document.getElementById('inputSuperficie').value;
     let inputTipoOportunidad = document.getElementById('inputTipoOportunidad').value;
-
+    let idOportunidad = id;
     let imagenFirma = $canvas.toDataURL();
     let imagenEnviada = imagenFirma.substring(22, 10000);
-
+    
 
 
     
@@ -40,7 +47,8 @@ function enviarMandato() {
             inputSuperficie: inputSuperficie,
             inputTipoOportunidad: inputTipoOportunidad,
             imagenFirma: imagenFirma,
-            imagenEnviada: imagenEnviada
+            imagenEnviada: imagenEnviada,
+            idOportunidad : idOportunidad
         })
 
     })

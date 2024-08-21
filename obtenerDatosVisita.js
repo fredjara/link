@@ -28,6 +28,27 @@ document.addEventListener('DOMContentLoaded', (event) => {
         document.getElementById('inputPrecioV').value = data.valorVenta;
         document.getElementById('inputDirección').value = data.Direccion;
         document.getElementById('inputSuperficie').value = data.SuperficieConstruida;
+
+        var inputA = document.getElementById('inputPrecioA');
+        var inputV = document.getElementById('inputPrecioV');
+        var textoA = document.getElementById('textoarriendo');
+        var TextoV = document.getElementById('textoventa');
+
+        if(data.tipoOportunidad == 282270000){
+            
+            inputA.style.display = 'none';
+            textoA.style.display = 'none';
+            console.log("VENTA");
+        }else{
+            if(data.tipoOportunidad == 282270001){
+                inputV.style.display = 'none';
+                TextoV.style.display = 'none';
+                console.log("ARRIENDO");
+            }else{
+                console.log("VENTA Y ARRIENDO");
+            }
+        }
+
         let tipoOportunidad = data.tipoOportunidad;
         switch (tipoOportunidad){
             case "100000000":
