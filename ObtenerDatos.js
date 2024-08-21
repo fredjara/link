@@ -149,9 +149,10 @@ document.addEventListener('DOMContentLoaded', (event) => {
                 console.log("VENTA Y ARRIENDO");
             }
         }
-
+        
         var firmaA = document.getElementById('firmaarriendo');
         var firmaV = document.getElementById('firmaventa');
+        var firmaVA = document.getElementById('firmaventaArriendo');
         if(data.tipoOportunidad == 282270000){
             
             firmaV.style.display = 'block';  
@@ -159,11 +160,11 @@ document.addEventListener('DOMContentLoaded', (event) => {
         }else{
             if(data.tipoOportunidad == 282270001){
                 firmaA.style.display = 'block';  
-                console.log("VENTA");
+                console.log("Arriendo");
             }else{
                 console.log("VENTA Y ARRIENDO");
-                firmaV.style.display = 'block';  
-                console.log("VENTA");
+                firmaVA.style.display = 'block';  
+                
             }
         }
 
