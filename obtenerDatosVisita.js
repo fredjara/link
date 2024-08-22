@@ -23,9 +23,11 @@ document.addEventListener('DOMContentLoaded', (event) => {
     .then(response => response.json())
     .then(data => {
         console.log('Success:', data);
-        
-        document.getElementById('inputPrecioA').value = data.valorArriendo;
-        document.getElementById('inputPrecioV').value = data.valorVenta;
+        var UF = data.UF;
+        var valorufV = UF + " " + data.valorVenta;
+        var valorufA = UF + " " + data.valorArriendo;
+        document.getElementById('inputPrecioA').value = valorufA;
+        document.getElementById('inputPrecioV').value = valorufV;
         document.getElementById('inputDirección').value = data.Direccion;
         document.getElementById('inputSuperficie').value = data.SuperficieConstruida;
 
