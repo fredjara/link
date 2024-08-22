@@ -23,8 +23,9 @@ document.addEventListener('DOMContentLoaded', (event) => {
     .then(response => response.json())
     .then(data => {
         console.log('Success:', data);
-        var valorufV = "UF " + data.ValorV;
-        var valorufA = "UF " + data.valorA;
+        var UF = data.UF;
+        var valorufV = UF + " " + data.ValorV;
+        var valorufA = UF + " " + data.valorA;
         document.getElementById('inputOportunidad').value = data.idOportunidad;
         document.getElementById('inputValorMandatoA').value = valorufA;
         document.getElementById('inputValorMandatoV').value = valorufV;
