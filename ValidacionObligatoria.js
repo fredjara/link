@@ -1,4 +1,4 @@
-document.addEventListener('DOMContentLoaded', (event) => {
+/*document.addEventListener('DOMContentLoaded', (event) => {
     let TextoinputNombre = document.getElementById("inputNombre");
     let TextoinputRutRepresentante = document.getElementById("inputRutRepresentante");
     let TextoinputCorreo = document.getElementById("inputCorreo");
@@ -14,9 +14,9 @@ document.addEventListener('DOMContentLoaded', (event) => {
     }
 
 });
+*/
 
-
-
+/*
 function validateForm() {
     const radioButtons = document.querySelectorAll('input[name="options"]');
     let isChecked = false;
@@ -43,7 +43,7 @@ function validateForm() {
         botonenvio.style.backgroundColor = '';
     }
 }
-
+*/
 
 function validarRUT(rut) {
     // Eliminar puntos y guiones
@@ -87,6 +87,32 @@ document.getElementById("inputRutRepresentante").addEventListener("blur", functi
     }
 });
 
+function ValidarCampos(){
+    var emailInput = document.getElementById("inputCorreo").value;
+    var emailError = document.getElementById("emailError");
+    var emailPattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+    let esValido = true;
+
+    //ValidarCorreo
+    if (!emailPattern.test(emailInput)) {
+        emailError.style.display = "inline";
+        esValido = false;  
+    } else {
+        emailError.style.display = "none"; 
+    }
+    //ValidarRut
+    var rutInput = document.getElementById("inputRutRepresentante").value;
+    var rutError = document.getElementById("RutError");
+
+    if (!validarRUT(rutInput)) {
+        rutError.style.display = "inline";  // Muestra el mensaje de error
+    } else {
+        rutError.style.display = "none";  // Oculta el mensaje de error
+    }
+
+    //ValidaNombre
+}
+
 
 document.getElementById("inputCorreo").addEventListener("blur", function() {
     var emailInput = document.getElementById("inputCorreo").value;
@@ -94,6 +120,18 @@ document.getElementById("inputCorreo").addEventListener("blur", function() {
     var emailPattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
 
     if (!emailPattern.test(emailInput)) {
+        emailError.style.display = "inline";  
+    } else {
+        emailError.style.display = "none"; 
+    }
+});
+
+document.getElementById("inputNombre").addEventListener("blur", function() {
+    var emailInput = document.getElementById("inputNombre").value;
+    var emailError = document.getElementById("NombreError");
+
+
+    if (emailInput==null || emailInput=="" || emailInput==undefined) {
         emailError.style.display = "inline";  
     } else {
         emailError.style.display = "none"; 

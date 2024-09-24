@@ -79,16 +79,17 @@
                 </div>
                 
                 <div class="form-group">
-                    <input type="text" id="inputNombre" oninput="validateForm()">
+                    <input type="text" id="inputNombre" >
                     <label for="inputNombre">Nombre Representante *</label>
+                    <span id="NombreError" style="color: red; display: none;">Nombre no válido</span>
                 </div>
                 <div class="form-group">
-                    <input type="text" id="inputRutRepresentante" oninput="validateForm()">
+                    <input type="text" id="inputRutRepresentante">
                     <label for="inputRutRepresentante">Rut Representante *</label>
                     <span id="RutError" style="color: red; display: none;">Rut no valido</span>
                 </div>
                 <div class="form-group">
-                    <input type="text" id="inputCorreo" oninput="validateForm()">
+                    <input type="text" id="inputCorreo" >
                     <label for="inputCorreo">Correo Electronico *</label>
                     <span id="emailError" style="color: red; display: none;">Correo electrónico no válido</span>
                 </div>
@@ -112,8 +113,9 @@
                 <br>
                 <div class="text" style="display: flex; align-items: center; gap: 15px;">
                     <label style="font-size: 1rem;" for="input3">Autorizo instalacion letrero *</label>
-                    <input style="height: 20px;" type="radio" name="options" id="input12" oninput="validateForm()" >Si</input>
-                    <input style="height: 20px;" type="radio" name="options" id="input12" oninput="validateForm()">No</input>
+                    <input style="height: 20px;" type="radio" name="options" id="input12"  >Si</input>
+                    <input style="height: 20px;" type="radio" name="options" id="input12" >No</input>
+                    <span id="letreroError" style="color: red; display: none;">Debe seleccionar una opción</span>
                     
                 </div>
                 
@@ -161,7 +163,7 @@ Colliers Prosin S.A. tendrá derecho asimismo a percibir la comisión establecid
        
     </section>
     
-
+    <div id="AlertaDeCierre"></div>
     
    
     
