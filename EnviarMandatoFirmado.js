@@ -140,10 +140,10 @@ function enviarMandato() {
     let cod1 = '&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig=mFryhe1LEXTxEXUr9Zi3jwlhlr7vaSO-JibjF_fy0fo';//cod1
     let cod = 'paths/invoke?api-version=2016-06-01'+cod1;
     //Link de prueba https://prod-24.brazilsouth.logic.azure.com:443/workflows/ac7a169072be42d492dd50ce7782169d/triggers/manual/paths/invoke?api-version=2016-06-01&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig=A4_p3g43gCxVWSx0sJPWtJFoNqan-48aNUeVwWX_SrI
-    fetch('https://prod-24.brazilsouth.logic.azure.com:443/workflows/ac7a169072be42d492dd50ce7782169d/triggers/manual/paths/invoke?api-version=2016-06-01&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig=A4_p3g43gCxVWSx0sJPWtJFoNqan-48aNUeVwWX_SrI', {
+    //fetch('https://prod-24.brazilsouth.logic.azure.com:443/workflows/ac7a169072be42d492dd50ce7782169d/triggers/manual/paths/invoke?api-version=2016-06-01&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig=A4_p3g43gCxVWSx0sJPWtJFoNqan-48aNUeVwWX_SrI', {
     
     //Link de productivo
-    //fetch('https://prod2-04.brazilsouth.logic.azure.com:443/workflows/db511920e0de4bbfb7acf240f0bc33fa/triggers/manual/' + cod, {
+    fetch('https://prod2-04.brazilsouth.logic.azure.com:443/workflows/db511920e0de4bbfb7acf240f0bc33fa/triggers/manual/' + cod, {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
