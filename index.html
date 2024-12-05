@@ -113,8 +113,8 @@
                 <br>
                 <div class="text" style="display: flex; align-items: center; gap: 15px;">
                     <label style="font-size: 1rem;" for="input3">Autorizo instalacion letrero *</label>
-                    <input style="height: 20px;" type="radio" name="options" id="input12"  >Si</input>
-                    <input style="height: 20px;" type="radio" name="options" id="input12" >No</input>
+                    <input style="height: 20px;" type="radio" name="options" id="input12" value="Si" >Si</input>
+                    <input style="height: 20px;" type="radio" name="options" id="input12" value="No">No</input>
                     <span id="letreroError" style="color: red; display: none;">Debe seleccionar una opción</span>
                     
                 </div>
@@ -138,6 +138,8 @@
         
         <div class="botones">
             <button id="submitBtn" >Firmar Mandato</button>
+
+            <button id="pruebaBtn" onclick="validarLetrero()" >Probar</button>
            
         </div>
        
@@ -172,6 +174,7 @@ Colliers Prosin S.A. tendrá derecho asimismo a percibir la comisión establecid
     <script src="EnviarMandatoFirmado.js"></script>
     <script src="entradaJS.js"></script>
     <script src="ValidacionObligatoria.js"></script>
+
     
     <footer>
         <div>
