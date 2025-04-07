@@ -26,7 +26,7 @@ function enviarMandato() {
     let inputPrecioA = document.getElementById('inputPrecioA').value;
     let inputSuperficie = document.getElementById('inputSuperficie').value;
     let inputTipoOportunidad = document.getElementById('inputTipoOportunidad').value;
-    let idOportunidad = id;
+    let idCita = id;
     let imagenFirma = $canvas.toDataURL();
     let imagenEnviada = imagenFirma.substring(22, 10000);
 
@@ -35,6 +35,8 @@ function enviarMandato() {
         alert("Falta firmar documento");
         return;
     }
+
+    
 
 
     
@@ -53,7 +55,7 @@ function enviarMandato() {
             inputTipoOportunidad: inputTipoOportunidad,
             imagenFirma: imagenFirma,
             imagenEnviada: imagenEnviada,
-            idOportunidad : idOportunidad
+            idCita : idCita
         })
 
     })
